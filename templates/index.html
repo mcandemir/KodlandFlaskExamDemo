@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Quiz</title>
+    <style>
+      body {
+        position: relative;
+        min-height: 100vh;
+      }
+
+      footer {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        text-align: center;
+      }
+    </style>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+  </head>
+  <body>
+    <div class="col-md-6 m-auto">
+      <h1>Quiz</h1>
+      <form method="post">
+        <!-- Question about the user's name -->
+        <h3>
+          Question 1: Aşağıdakilerden hangisi Python'da AI geliştirme için
+          kullanılan araçlardan birisi olamaz?
+        </h3>
+        <input type="radio" name="question1" value="A" /> TensorFlow<br />
+        <input type="radio" name="question1" value="B" /> Django<br />
+        <input type="radio" name="question1" value="C" /> PyTorch<br />
+        <input type="radio" name="question1" value="D" /> Scikit-Learn<br />
+
+        <!-- First question with multiple choice -->
+        <h3>
+          Question 2: Python programlamada OpenCV kütüphanesi ne işe yarar?
+        </h3>
+        <input type="radio" name="question2" value="A" /> Bilgisayarda Görü için
+        kullanılır<br />
+        <input type="radio" name="question2" value="B" /> Mobil Geliştirme için
+        kullanılır<br />
+        <input type="radio" name="question2" value="C" /> Database yönetmek için
+        kullanılır<br />
+        <input type="radio" name="question2" value="D" /> Web sitesi tasarımı
+        için kullanılır<br />
+
+        <!-- Second question with multiple choice -->
+        <h3>Question 3: NLP'de cümlenin en küçük birimine ne ad verilir??</h3>
+        <input type="radio" name="question3" value="A" /> Stem<br />
+        <input type="radio" name="question3" value="B" /> Lemma<br />
+        <input type="radio" name="question3" value="C" /> Lexicon<br />
+        <input type="radio" name="question3" value="D" /> Token<br />
+
+        <!-- Third question with a text input -->
+        <h3>
+          Question 4: Hangisi Python'da AI modeli eğitirken modelin
+          performansını etkileyen ana faktörlerden birisi değildir?
+        </h3>
+        <input type="radio" name="question4" value="A" /> Modelin eğitim
+        parametreleri<br />
+        <input type="radio" name="question4" value="B" /> Verisetinin
+        kalitesi<br />
+        <input type="radio" name="question4" value="C" /> Kullanılan
+        kütüphane<br />
+        <input type="radio" name="question4" value="D" /> Modelin mimarisi<br />
+
+        <br />
+        <input
+          type="submit"
+          value="Submit Answers"
+          class="btn btn-success btn-md btn-block"
+        />
+
+        <!-- User's best score in the top right corner -->
+        <div style="position: absolute; top: 10px; right: 10px">
+          {% if score %}
+
+          <p>This Exam's Score: {{ score }}</p>
+
+          {% else %}
+
+          <p>This Exam's Score: -</p>
+
+          {% endif %} {% if bestscore %}
+
+          <p>Best Score: {{ bestscore }}</p>
+
+          {% else %}
+
+          <p>Best Score: -</p>
+
+          {% endif %}
+        </div>
+      </form>
+    </div>
+
+    <!-- Footer with information about the author -->
+    <footer>
+      <p>Complete the exam again to beat your bestscore.</p>
+      <p>Exam Demo by Mehmet Can Demir, mhmtcndmr01@gmail.com</p>
+    </footer>
+  </body>
+</html>
